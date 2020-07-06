@@ -6,9 +6,12 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Calender Event</legend>
-            event_title: {{ event.title }}
-            <br>
-            event_description: {{ event.description }}
+            {% if user.is_authenticated %}
+                event_title: {{ event.title }} <br>
+                event_description: {{ event.description }} <br>
+            {% else %}
+                Login to see event details.
+            {% endif %}
         </fieldset>
     </form>
 </div>

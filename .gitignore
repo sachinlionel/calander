@@ -1,2 +1,3 @@
 ./calender_env
 ./calender_dev.iml
+./calenderui/db.sqlite3
