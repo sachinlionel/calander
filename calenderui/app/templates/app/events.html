@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+
+
+<div class="d-flex justify-content-around">
+    <a class="btn btn-info" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
+    {% if user.is_authenticated %}
+        <a class="btn btn-info" href="{% url 'event-create' %}"> Create Event </a>
+    {% else %}
+        <a class="btn btn-info" href="{% url 'login' %}"> Login to access your events </a>
+    {% endif %}
+    <a  class="btn btn-info" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
+</div>
+
+{{ calendar }}
+
+{% endblock %}
